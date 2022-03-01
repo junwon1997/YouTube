@@ -1,0 +1,253 @@
+:root {
+  /*color*/
+  --white-color: white;
+  --black-color: black;
+  --blue-color: blue;
+  --red-color: red;
+  --grey-dark-color: #909090;
+  --grey-light-color: #e0e0e0;
+
+  /*size*/
+  --paddig: 12px;
+  --avatar-size: 36px;
+
+  /*font size*/
+  --font-large: 18px;
+  --font-medium: 14px;
+  --font-small: 12px;
+  --font-micro: 10px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Rubik", sans-serif;
+}
+
+button,
+button:focus {
+  border: none;
+  cursor: pointer;
+  outline: none;
+  background: none;
+}
+
+/*header*/
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--paddig);
+  background-color: var(--black-color);
+  color: var(--white-color);
+}
+
+.navbar_logo {
+  color: red;
+  padding: 8px 12px;
+  font-size: 28px;
+}
+
+.navbar_icon {
+  display: flex;
+  list-style: none;
+  color: white;
+  padding: 8px 12px;
+}
+
+.navbar_icon li {
+  color: white;
+  padding: 8px 12px;
+  font-size: 20px;
+}
+
+/*video*/
+
+.player {
+  position: sticky;
+  top: 0; /*위에 고정*/
+  text-align: center;
+  background-color: var(--black-color);
+}
+
+.player video {
+  width: 100%;
+  height: 100%;
+  max-width: 1000px; /*동영상 사이즈 크기 제한*/
+  max-height: 300px;
+}
+
+/*제목(title) 정보*/
+body > .info {
+  padding: var(--paddig);
+}
+
+.info .metadata .hashtags {
+  display: flex;
+  font-size: var(--font-small);
+  color: var(--blue-color);
+  list-style: none;
+}
+
+.info .metadata .hashtags li {
+  margin-right: var(--paddig);
+}
+
+.info .metadata .titleAndButton {
+  display: flex;
+}
+
+.info .metadata .titleAndButton .title {
+  font-size: var(--font-medium);
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  margin-right: var(--paddig);
+}
+
+.info .metadata .titleAndButton .moreBtn {
+  height: 100%;
+}
+
+.info .views {
+  font-size: var(--font-small);
+  color: var(--grey-dark-color);
+}
+
+/*좋아요 구독 버튼 정보*/
+.actions {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  margin: var(--paddig) 0;
+}
+
+.actions button {
+  display: flex;
+  flex-direction: column;
+  font-size: var(--font-small);
+  color: var(--grey-dark-color);
+}
+
+.actions button i {
+  margin: 0 auto;
+  margin-bottom: calc(var(--paddig) / 2);
+  font-size: 16px;
+}
+
+.actions button i.fas fa-thumbs-up {
+  color: blue;
+}
+
+/*채널 정보*/
+.channel {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid var(--grey-light-color);
+  border-bottom: 1px solid var(--grey-light-color);
+}
+
+.channel .metadata {
+  display: flex;
+  align-items: center;
+}
+
+.channel .metadata .info {
+  display: flex;
+  flex-direction: column;
+  margin: var(--paddig);
+}
+
+.channel .metadata img {
+  width: var(--avatar-size);
+  height: var(--avatar-size);
+  border-radius: 50%;
+}
+
+.channel .metadata .info .name {
+  font-size: var(--font-medium);
+}
+
+.channel .metadata .info .subscribers {
+  font-size: var(--font-small);
+  color: var(--grey-dark-color);
+}
+
+.channel .subscribe {
+  text-transform: uppercase;
+  color: var(--red-color);
+  font-size: var(--font-medium);
+}
+
+.channel .metadata .item {
+  list-style: none;
+}
+
+/*다음 영상 리스트 정보*/
+.upNext {
+  padding: 0 var(--paddig);
+}
+
+.upNext > .title {
+  font-size: var(--font-medium);
+  color: var(--grey-dark-color);
+  margin-bottom: calc(var(--paddig) / 2);
+}
+
+.upNext .item {
+  display: flex;
+  margin-top: var(--paddig);
+}
+
+.upNext .item .img {
+  flex: 1 1 20%;
+}
+
+.upNext .item .img img {
+  width: 100%;
+  height: 100%;
+}
+
+.upNext .item .info {
+  flex: 1 1 80%;
+  margin-left: var(--paddig);
+}
+
+.upNext .item .moreBtn {
+  flex: 1 1 5%;
+}
+
+.upNext .item .info {
+  display: flex;
+  flex-direction: column;
+}
+
+.upNext .item .info .name,
+.upNext .item .info .views {
+  font-size: var(--font-micro);
+  color: var(--grey-dark-color);
+}
+
+.infoAndupNext {
+  display: flex;
+  flex-direction: column;
+  margin: var(--paddig);
+}
+
+@media screen and (min-width: 768px) {
+  .infoAndupNext {
+    flex-direction: row;
+    margin: var(--paddig);
+  }
+}
